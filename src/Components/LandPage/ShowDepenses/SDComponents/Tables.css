@@ -6,7 +6,10 @@
     padding: 50px;
 }
 
-
+.result{
+    background-color: rgb(2, 2, 23);
+    color: white;
+}
 
 .dataRow{
     text-align: center;

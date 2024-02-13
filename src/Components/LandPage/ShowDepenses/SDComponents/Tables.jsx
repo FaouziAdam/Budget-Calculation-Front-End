@@ -2,15 +2,20 @@ import './Tables.css';
 import React from 'react'
 import PropTypes from 'prop-types';
 
+const monthNames = [
+  "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+  "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+];
+
 export default function Tables({dataAppBudget}) {
   return (
-    <div className='tableDepensesContainer'>
+    <div className='tableDepensesContainer rounded-lg'>
       {dataAppBudget.map((appData) => (
         <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm" key={appData.mois}>
           <thead className="ltr:text-left rtl:text-right">
             <tr>
-              <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900" colSpan={2}>
-                <strong>{appData.mois}</strong>
+              <th className="whitespace-nowrap px-4 py-2 font-medium text-900 result" colSpan={2}>
+                <strong>{monthNames[appData.mois - 1]}</strong>
               </th>
             </tr>
             <tr>
@@ -18,7 +23,7 @@ export default function Tables({dataAppBudget}) {
               <th className="whitespace-nowrap px-4 py-2 font-medium text-gray-900">Amount</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className='divide-y divide-gray-200' >
             {appData.appFluxList.map((flux, index) => (
               <React.Fragment key={flux.id}>
                 {index === 0 || flux.typeDeFlux !== appData.appFluxList[index - 1].typeDeFlux ? (
@@ -29,14 +34,14 @@ export default function Tables({dataAppBudget}) {
                   </tr>
                 ) : null}
                 <tr>
-                  <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dataRow">{flux.libelle}</td>
-                  <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dataRow">{flux.montant}</td>
+                  <td className="whitespace-nowrap px-4 py-2 text-gray-700 dataRow">{flux.libelle}</td>
+                  <td className="whitespace-nowrap px-4 py-2 text-gray-700 dataRow">{flux.montant}</td>
                 </tr>
               </React.Fragment>
             ))}
             <tr>
-              <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dataRow result">Resultat</td>
-              <td className="whitespace-nowrap px-4 py-2 font-medium text-gray-900 dataRow result">{appData.resultat}</td>
+              <td className="whitespace-nowrap px-4 py-2 font-medium text-900 dataRow result">Resultat</td>
+              <td className="whitespace-nowrap px-4 py-2 font-medium text-900 dataRow result">{appData.resultat}</td>
             </tr>
           </tbody>
         </table>
