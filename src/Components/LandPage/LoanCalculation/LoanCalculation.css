@@ -1,0 +1,21 @@
+.loanCalculationContainer{
+    margin-left: 150px;
+    width: 100%;
+    height: 729px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.loanCalculationContainer button{
+    width: 100%;
+}
+
+.calculationContainer{
+    width: 45%;
+}
+
+.tutorial{
+    width: 45%;
+    text-align: justify;
+}

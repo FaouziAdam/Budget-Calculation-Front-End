@@ -1,0 +1,8 @@
+.creationMondalContainer{
+    width: 500px;
+    height: fit-content;
+}
+
+.creationMondalContainer button{
+    margin-left: 38%;
+}

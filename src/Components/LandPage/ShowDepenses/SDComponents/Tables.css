@@ -1,0 +1,14 @@
+.tableDepensesContainer{
+    width: 500px;
+    display: flex;
+    gap: 50px;
+    margin-top: 5%;
+    padding: 50px;
+}
+
+
+
+.dataRow{
+    text-align: center;
+}
+

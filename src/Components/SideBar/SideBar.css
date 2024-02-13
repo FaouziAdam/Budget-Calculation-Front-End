@@ -1,0 +1,27 @@
+.sideBarContainer{
+    height: 729px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+    position: fixed;
+}
+
+.sideBarContainer p{
+    cursor: pointer;
+    color: white;
+}
+
+.sideBarContainer p:hover{
+    color: white;
+}
+
+.sidBareChildren{
+    width: 100%;
+}
+
+.sidBareChildren:hover{
+    border: solid white;
+}
